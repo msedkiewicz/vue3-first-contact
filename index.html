@@ -19,9 +19,13 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-if="inventory > 10">In Stock</p> <!-- chained conditional logic -->
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+            <p v-else>Out of Stock</p>
             <!-- solution -->
-            <a :href="url">Made by Vue Mastery</a>
+            <p v-if="onSale">On Sale!</p>
             <!-- solution -->
+            <p v-show="onSale">V-show test</p> <!-- for toggle -->
           </div>
         </div>
       </div>
