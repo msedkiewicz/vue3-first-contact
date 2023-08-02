@@ -1,11 +1,11 @@
-app.component('product-display', {
-    props: {
-        premium: {
-            type: Boolean,
-            required: true,
-        }
+app.component("product-display", {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true,
     },
-    template:
+  },
+  template:
     /*html*/
     `<div class="product-display">
     <div class="product-container">
@@ -65,10 +65,10 @@ app.component('product-display', {
   },
   methods: {
     addToCart() {
-      this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
     removeFromCart() {
-      this.$emit('remove-from-cart', this.variants[this.selectedVariant].id)
+      this.$emit("remove-from-cart", this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;
@@ -91,10 +91,10 @@ app.component('product-display', {
       return this.brand + " " + this.product + " is currently out of stock.";
     },
     shipping() {
-        if (this.premium) {
-            return 'Free'
-        }
-        return 2.99
-    }
+      if (this.premium) {
+        return "Free";
+      }
+      return 2.99;
+    },
   },
-})
+});
