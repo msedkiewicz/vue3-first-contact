@@ -65,12 +65,10 @@ app.component('product-display', {
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit('add-to-cart')
     },
     removeFromCart() {
-      if (this.cart >= 1) {
-        this.cart -= 1;
-      }
+      this.$emit('remove-from-cart')
     },
     updateVariant(index) {
       this.selectedVariant = index;

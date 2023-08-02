@@ -3,7 +3,16 @@ const app = Vue.createApp({
     return {
       cart: 0,
       premium: true,
-    }
+    };
   },
-  methods: {}
-})
+  methods: {
+    updateCartAdd() {
+      this.cart += 1;
+    },
+    updateCartRemove() {
+      if (this.cart >= 1) {
+        this.cart -= 1;
+      }
+    },
+  },
+});
